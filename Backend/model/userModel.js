@@ -10,8 +10,8 @@ const userSchema = new Schema({
   username: 'String',
   password: 'String',
   verified: {
-    type: Boolean,
-    default: false,
+    type: 'String',
+    default: 'false',
   },
   date: {
     type: Date,
