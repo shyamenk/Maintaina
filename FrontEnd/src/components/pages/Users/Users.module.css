@@ -1,0 +1,25 @@
+.table {
+  width: 90%;
+  max-width: 100rem;
+  padding: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px #dddddd solid;
+  text-align: left;
+  padding: 8px;
+}
+
+.striped:nth-child(even) {
+  background-color: #dddddd;
+}
+.hover:hover {
+  background-color: #61dafb;
+}
