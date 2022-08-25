@@ -1,0 +1,30 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+.container {
+  display: flex;
+}
+
+.inner-container {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  position: fixed;
+}
+
+.sidebar {
+  width: 20%;
+  background: gray;
+}
+
+.header {
+  border: 1px solid black;
+  height: 300px;
+  padding: 10px;
+}
+
+.content {
+  border: 1px solid black;
+  padding: 10px;
+}

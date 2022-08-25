@@ -1,15 +1,28 @@
-.table {
+.users {
   width: 90%;
   max-width: 100rem;
   padding: 3rem;
   margin: 2rem auto;
   text-align: center;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
+h2 {
+  color: red;
+  text-align: center;
+  margin-top: 30px;
 }
-
+/* table {
+  width: 90%;
+  max-width: 100rem;
+  padding: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-collapse: collapse;
+} */
+/* table {
+  
+  width: 100%;
+} */
+/* 
 td,
 th {
   border-bottom: 1px #dddddd solid;
@@ -22,4 +35,4 @@ th {
 }
 .hover:hover {
   background-color: #61dafb;
-}
+} */

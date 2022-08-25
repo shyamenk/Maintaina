@@ -1,41 +1,46 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useMemo} from 'react'
 
 import Card from '../../UI/Card'
 import classes from './Users.module.css'
-import Table from '../../UI/Table'
+import {useFetch} from '../../../hooks/useFetch'
 import {Typography} from '@mui/material'
-import AuthContext from '../../../store/auth-context'
-//import Spinner from '../UI/Spinner'
+import DataTable from '../../UI/DataTable'
+
 const Users = props => {
-  const [isData, setIsData] = useState([])
-  const authCtx = useContext(AuthContext)
+  const url = 'http://localhost:3001/auth/getUsers'
 
-  useEffect(() => {
-    authCtx.fetchUsers().then(function (users) {
-      const filteredArray = users.map(
-        ({_id, name, username, role, verified}) => ({
-          _id,
-          name,
-          username,
-          role,
-          verified,
-        }),
-      )
-      setIsData(filteredArray)
+  // Fetch API
+  const {data, error, loading} = useFetch(url)
+  console.log(data)
+
+  let columns = useMemo(() => [], [])
+
+  if (data === undefined || data === null || data.length === 0) {
+  } else {
+    columns = Object.keys(data[0]).map(key => {
+      const capitalize = key.toLocaleUpperCase()
+      return {Header: capitalize, accessor: key}
     })
-    return () => {}
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setIsData])
-
+  }
+  //  useMemo(()=>{},[])
   return (
     <>
-      <Card className={classes.table}>
-        <div style={classes.container}>
-          <Typography variant="h5" color="secondary">
-            User Details
-          </Typography>
+      <Card className={classes.users}>
+        <div>
+          <h1>User Details</h1>
         </div>
-        <Table data={!isData ? [] : isData}></Table>
+
+        {loading && (
+          <Typography variant="h5" color="secondary">
+            Loading...
+          </Typography>
+        )}
+        {error && <p>{error.message}</p>}
+
+        {data && <DataTable columns={columns} data={data}></DataTable>}
+        {/* {useMemo(() => {
+          return data && <DataTable columns={columns} data={data}></DataTable>
+        }, [columns, data])} */}
       </Card>
     </>
   )

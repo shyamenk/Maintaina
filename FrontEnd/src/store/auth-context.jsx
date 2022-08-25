@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import fetchRequest from './fetch-api'
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
@@ -25,11 +24,11 @@ export const AuthContextProvider = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const fetchUsers = () => {
-    const fetchUser = 'http://localhost:3001/auth/getUsers'
-    const result = fetchRequest('get', {}, fetchUser, '')
-    return result
-  }
+  // const fetchUsers = () => {
+  //   const fetchUser = 'http://localhost:3001/auth/getUsers'
+  //   const result = fetchRequest('get', {}, fetchUser, '')
+  //   return result
+  // }
 
   //Logout the user from the server
   const logoutHandler = async () => {
@@ -115,7 +114,7 @@ export const AuthContextProvider = props => {
         onLogout: logoutHandler,
         onRegister: registerHandler,
         onLogin: loginHandler,
-        fetchUsers: fetchUsers,
+        // fetchUsers: fetchUsers,
       }}
     >
       {props.children}

@@ -20,6 +20,8 @@ export const logoutUser = (req, res) => {
 
 //user login handler
 export const loginUser = (req, res, next) => {
+  console.log('Backend Login')
+  console.log(req.body)
   const user = new User({
     username: req.body.username,
     password: req.body.password,
@@ -106,13 +108,28 @@ export const registerUser = async (req, res) => {
     }
   })
 }
-
-export const getUsers = async (req, res) => {
-  User.find({}, function (err, users) {
+export const deleteUser = (req, res) => {
+  const userId = req.params.userId
+  console.log('Deleted')
+  User.deleteOne({username: userId}, (err, user) => {
     if (err) {
-      return res.status(err)
+      console.log('Error removing')
+      return res.send({status: 'error', message: err.message})
     } else {
-      return res.send({status: 'ok', message: users})
+      console.log('Deleted..')
+      res.json({user})
     }
   })
+}
+export const getUsers = async (req, res) => {
+  const user = await User.find(
+    {},
+    {_id: 0, name: 1, username: 1, role: 1, verified: 1},
+  )
+  if (!user) {
+    return res.json({status: 'error', message: 'User not found'})
+    console.log('User NotFound')
+  } else {
+    res.json(user)
+  }
 }

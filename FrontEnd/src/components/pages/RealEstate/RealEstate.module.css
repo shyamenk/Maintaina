@@ -1,0 +1,17 @@
+.admin {
+  padding: 10px;
+  max-width: 100rem;
+  /* padding: 3rem; */
+  /* margin: 2rem auto; */
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 2rem auto;
+  padding: 30px;
+}

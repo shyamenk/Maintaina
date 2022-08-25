@@ -1,16 +1,7 @@
-* {
-  box-sizing: border-box;
+h1 {
+  font-family: Dosis;
+  font-weight: regular;
 }
-
-html {
-  font-family: sans-serif;
-  background: #fff;
-}
-
 body {
-  margin: 0;
-}
-
-main {
-  margin-top: 6rem;
+  font-family: MerryWeather;
 }

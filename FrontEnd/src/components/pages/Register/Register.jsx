@@ -49,10 +49,10 @@ const Register = () => {
   }
   const onChangeHandler = event => {
     authCtx.setIsError({type: '', status: false})
-    const {id, value} = event.target
+    const {name, value} = event.target
     dispatchInput({
       type: 'USER_INPUT',
-      input: id,
+      input: name,
       value: value,
     })
     //console.log(inputState)
@@ -71,29 +71,28 @@ const Register = () => {
       </div>
       <form onSubmit={submitHandler}>
         <Input
-          id="name"
+          name="name"
           label="Name"
           autocomplete="on"
           type="text"
-          value={inputState.name}
           onChange={onChangeHandler}
         />
         <Input
-          id="email"
+          name="email"
           label="E-Mail"
           type="email"
           autocomplete="on"
           // isValid={emailIsValid}
-          value={inputState.email}
+          // value={inputState.email}
           onChange={onChangeHandler}
         />
         <Input
-          id="password"
+          name="password"
           label="Password"
           type="password"
           autocomplete="on"
           // isValid={passwordIsValid}
-          value={inputState.password}
+          // value={inputState.password}
           onChange={onChangeHandler}
         />
 

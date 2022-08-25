@@ -5,8 +5,8 @@
   flex-direction: column;
 }
 
-.control label,
-.control input {
+.control select,
+.control select {
   display: block;
 }
 
@@ -17,7 +17,7 @@
   margin-bottom: 0.5rem;
 }
 
-.control input {
+.control select {
   flex: 3;
   font: inherit;
   padding: 0.35rem 0.35rem;
@@ -25,13 +25,13 @@
   border: 1px solid #ccc;
 }
 
-.control input:focus {
+.control select:focus {
   outline: none;
   border-color: #4f005f;
   background: #f6dbfc;
 }
 
-.control.invalid input {
+.control.invalid select {
   border-color: red;
   background: #fbdada;
 }

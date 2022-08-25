@@ -1,0 +1,130 @@
+/* table {
+  width: 100%;
+  max-width: 100rem;
+  padding: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 12px;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64, 64, 64, 0.7);
+  overflow: hidden;
+}
+/* 
+table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+} */
+/* td,
+table th {
+  padding: 12px 15px;
+} */
+
+/* table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  background-color: #741188;
+  color: white;
+} */
+
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.innerContainer {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 100%;
+  border-bottom-width: 1px;
+  border-color: #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+table {
+  min-width: 100%;
+  border-top-width: 1px;
+  border-color: #e5e7eb;
+}
+
+th {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  line-height: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+tbody {
+  background-color: #ffffff;
+  border-top-width: 1px;
+  border-color: #e5e7eb;
+}
+
+td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+/* Media Quries  */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 640px) {
+  .innerContainer {
+    border-radius: 0.5rem;
+  }
+}

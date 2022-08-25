@@ -44,10 +44,10 @@ const Login = props => {
 
   const onChangeHandler = event => {
     authCtx.setIsError({type: '', status: false})
-    const {id, value} = event.target
+    const {name, value} = event.target
     dispatchInput({
       type: 'USER_INPUT',
-      input: id,
+      input: name,
       value: value,
     })
   }
@@ -59,6 +59,7 @@ const Login = props => {
 
   return (
     <Card className={classes.login}>
+      {authCtx.loading && <p>Loading</p>}
       {authCtx.isError.status && <p>{authCtx.isError.type}</p>}
       <div style={{textAlign: 'center'}}>
         <h1>Login</h1>
@@ -66,13 +67,13 @@ const Login = props => {
 
       <form onSubmit={submitHandler}>
         <Input
-          id="email"
+          name="email"
           label="E-Mail"
           type="email"
           onChange={onChangeHandler}
         />
         <Input
-          id="password"
+          name="password"
           label="Password"
           type="password"
           onChange={onChangeHandler}

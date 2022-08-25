@@ -40,7 +40,7 @@ const Spinner = () => {
       Phone: '555-555-5555',
     },
   ]
-  const [data, setData] = useState([])
+  //const [data, setData] = useState([])
 
   const [inEditMode, setInEditMode] = useState({
     status: true,

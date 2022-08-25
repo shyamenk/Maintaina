@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3001
 import dbConnection from '../database/database.js'
 import User from '../model/userModel.js'
 import authRoutes from '../routes/auth-Routes.js'
+import adminRoutes from '../routes/admin-Routes.js'
 
 const app = express()
 
@@ -44,8 +45,11 @@ passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+//Route Configuration
 app.use('/auth', authRoutes)
+app.use('/home/admin', adminRoutes)
 
+//Server Configuration
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
 })
