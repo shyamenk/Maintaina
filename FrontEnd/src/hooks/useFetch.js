@@ -17,7 +17,7 @@ export const useFetch = url => {
         .finally(() => setLoading(false))
     }
     fetchData()
-    // console.log('Use Fetch Hook')
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url])
 
